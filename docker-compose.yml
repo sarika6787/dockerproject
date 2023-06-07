@@ -1,0 +1,34 @@
+version: '3'
+services:
+  devops:
+    image: ksr6787/devopsreponit
+    ports:
+      - "80:80"
+    volumes:
+      - "devopsvol"
+    deploy:
+      replicas: 3
+  aws:
+    image: ksr6787/awsreponit
+    ports:
+      - "81:80"
+    volumes:
+      - "awsvol"
+    deploy:
+      replicas: 3
+  datascience:
+    image: ksr6787/datasciencereponit
+    ports:
+      - "82:80"
+    volumes:
+      - "datasciencevol"
+    deploy:
+      replicas: 3
+  azure:
+    image: ksr6787/azurereponit
+    ports:
+      - "83:80"
+    volumes:
+      - "azurevol"
+    deploy:
+      replicas: 3
